@@ -1,22 +1,76 @@
 <html>
     <head>
-        <title>format text CSS</title>
-        <link rel="stylesheet" type="text/css" href="styleText.css">
+        <title>Position CSS</title>
+        <link rel="stylesheet" type="text/css" href="stylePosition.css">
     </head>
     <body>
-        <p class="tulisan_warna">Mengatur format text dengan CSS</p>
-        <p class="par1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem esse aperiam reiciendis ea accusantium, quidem iusto ad ut placeat eligendi possimus voluptatum blanditiis laboriosam. Autem perferendis tempora temporibus quisquam dolor!
-            Commodi, ipsa deleniti. At impedit ad dolorum, beatae amet voluptates laborum doloribus sapiente illum perferendis eaque quae libero optio rerum corporis quidem enim quibusdam tempore provident debitis ea quia! Suscipit.
-            Mollitia porro voluptates, magnam exercitationem beatae facilis maiores dignissimos ipsa ad, dicta laudantium adipisci sunt commodi. Omnis, explicabo porro? Alias iure vitae recusandae sequi incidunt! Doloremque officiis in veritatis neque!
-            Earum consectetur, exercitationem totam dolor soluta dignissimos dicta sequi veritatis fugiat quam ducimus nam autem saepe. Tempora atque saepe quaerat illo quae, molestiae ipsam iure, eligendi, asperiores sint ducimus repellat.
-            Animi consequuntur inventore assumenda. Eos doloribus earum eveniet. Quis alias magnam quaerat nisi delectus, temporibus ea nulla! Corporis autem quasi voluptatibus sint fugiat molestias. In vel voluptatibus suscipit distinctio fuga?
+        <h2>postion: static;</h2>
 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ex ea dolor voluptate doloremque, id corporis? Rem itaque ad fugit! Atque dolore dolores incidunt, nesciunt iure necessitatibus dicta pariatur laboriosam?
-            Tempora, dolores? Adipisci, facere! Distinctio similique nihil voluptates tempora, corporis voluptatibus, suscipit voluptatum repellendus a molestiae eos dolorum aut magnam impedit error reiciendis omnis, sapiente voluptate quaerat excepturi non veritatis?
-            Explicabo, asperiores est accusamus quidem fugit ipsum dignissimos et, saepe ex voluptatibus facere quam quas unde laborum veniam adipisci possimus necessitatibus perspiciatis dolor nostrum hic quae. Animi, voluptates! Excepturi, cum!
-            Hic officia distinctio velit. Officiis sint culpa quibusdam rerum consequatur tempore commodi ipsam sit officia minus vel error beatae omnis unde deserunt atque, porro voluptatum sapiente sunt alias praesentium! Dolorem.
-            Nulla sed commodi ab aut animi veritatis quibusdam aliquid deserunt. Nobis provident dolores quos atque repudiandae sint laboriosam, debitis id ex, autem laborum odio itaque similique laudantium suscipit facere reiciendis?
-        </p>
+        <p>Position static digunakan untuk mengatur element menjadi statis secara default.
+            Elemen akan mengikuti posisi normal secara default,
+            elemen tidak dipengaruhi oleh properti seperti top, bottom, left, dan right.:</p>
+
+        <div class="static">
+            Elemen ini diatur menggunakan posisi static;
+        </div>
+        <br><br><br><br>
+        <h2>position: relative;</h2>
+
+        <p>Sebuah element HTML yang menggunakan position relative akan terletak pada posisi normal.
+            Mengatur properti atas, kanan, bawah, dan kiri dari elemen yang diposisikan dengan “relatif” 
+            akan membuatnya jauh dari posisi normalnya. 
+            Konten lain tidak akan disesuaikan agar sesuai dengan celah yang ditinggalkan oleh elemen tersebut. </p>
+
+            <div class="relative">
+                Elemen ini diatur menggunakan posisi relative;
+            </div>
+            <br><br><br><br>
+            <h2>position: fixed;</h2>
+        
+            <p>Sebuah element HTML yang di setting dengan position fixed akan memiliki sifat tetap. 
+                tanpa ada perubahan bahkan jika halaman website di scroll. 
+                Berlaku pengaturan left, bottom, top dan right pada position fixed</p>
+
+                <div class="fixed">
+                    Elemen ini diatur menggunakan posisi fixed;
+                </div>
+                <br><br><br><br>
+                <br><br><br><br>
+                <br><br><br><br>
+                <br><br><br><br>
+                <h2>position: absolute;</h2>
+
+                <p>Element HTML yang menggunakan position absolute akan diposisikan relatif dengan 
+                    element lain yang mendahuluinya yang terdekat, 
+                    bukan relatif terhadap layar secara normal.  </p>
+
+                <div class="relative1">Elemen ini diatur menggunakan posisi: relative;
+                    <div class="absolute">Elemen ini diatur menggunakan posisi: absolute</div>
+                </div>
+
+                <br><br><br>
+                <br><br><br>
+
+                <h2>position: sticky;</h2>
+                <p>Cobalah untuk <b>sccroll</b> untuk mengetahui bagaimana posisi sticky bekerja.</p>
+                <p>Catatan IE/Edge 15 dan versi yang lebih lama tidak mendukung sticky</p>
+
+                <div class="sticky">Hola Aku adalah sticky</div>
+
+                <div style="padding-bottom: 2000px;">
+                    <p>Dalam contoh ini, elemen sticky menempel pada posisi paling atas halaman (top:0),
+                        ketika mencapai posisi scrollnya.</p>
+                        <p>Cobalah untuk melakukan scroll.</p>
+                        <p>Cobalah untuk melakukan scroll.. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit minus voluptates similique dicta dolorum tempore ex tempora repellat, illum officia earum perspiciatis dignissimos a voluptatum, ad assumenda laborum odio harum?
+                        Debitis officia quam ex nihil, cum veritatis maxime consequuntur culpa molestiae cumque voluptatum aliquid cupiditate recusandae officiis similique rerum. Est animi, dolore repudiandae numquam dolorem reiciendis dignissimos vel sed at!
+                        Quae accusantium temporibus dolore expedita ipsa perferendis distinctio consectetur aliquam non, est fuga perspiciatis sed, ad id enim nihil quod nulla quaerat necessitatibus harum repellat. Maiores similique magnam eligendi harum.
+                        Perspiciatis ullam beatae modi sapiente sed consequatur reiciendis quod! Odit vero soluta illum rerum suscipit numquam facere fugiat. Itaque aut vitae non ad autem nostrum quibusdam dignissimos ut, reprehenderit ducimus.
+                        Enim rem esse labore dolorem, aspernatur quas, perspiciatis nesciunt distinctio ipsa consequuntur in. Tempora similique rerum doloremque pariatur soluta, natus ipsum dignissimos sapiente iure. Iusto alias at voluptatibus omnis eaque!</p>
+                        <p>Cobalah untuk mekakukan scroll.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, eum illum cumque porro placeat doloribus, fugit reiciendis, vero molestias sapiente nobis esse. Ab sit ipsum repellat esse voluptatibus quis soluta.
+                        Fugit maiores animi delectus reprehenderit officia neque molestiae pariatur ea quidem accusamus nisi modi consequatur fuga iste sequi, earum beatae. Quibusdam veritatis neque illo maxime, nobis velit architecto voluptate quaerat.
+                        Adipisci amet quas sunt sequi sint corrupti numquam, voluptatum, omnis dignissimos dolores placeat pariatur delectus ex deserunt suscipit ipsum hic tempora esse distinctio atque culpa eum. Eligendi ad consequatur eveniet?
+                        Eum velit fuga facere aliquid rem magni quas nisi! Ipsam nesciunt saepe, dolores inventore quas, maiores aliquam exercitationem quasi placeat quos iste sed, eaque esse nobis voluptate tenetur. Explicabo, placeat?
+                        Itaque, enim non saepe mollitia modi aperiam nobis accusamus ratione eius aut at minus voluptates perspiciatis voluptatibus ipsam iure quae asperiores inventore debitis aliquam quisquam neque, sequi qui! Iste, iure.</p>
+                </div>
     </body>
 </html>
