@@ -7,5 +7,6 @@
 }
 
 .link:link{
-    color: blue;
+    /* color: blue; */
+    color: yellowgreen;
 }
