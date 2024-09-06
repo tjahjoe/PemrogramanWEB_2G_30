@@ -19,7 +19,12 @@ h2{
     padding: 50px;
 }
 
-body{
+/* body{
     background: lightcyan;
+    color: white;
+} */
+
+body{
+    background: url('bunga2.png');
     color: white;
 }
