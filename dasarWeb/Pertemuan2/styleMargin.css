@@ -2,11 +2,18 @@ h1{
     color: pink;
 }
 
-.box{
+/* .box{
     background: blue;
     height: 200px;
     width: 300px;
     margin: 30px;
+} */
+
+.box{ 
+    background: blue; 
+    height: 200px; 
+    width: 300px; 
+    margin: 300px; 
 }
 
 .box-dua{
