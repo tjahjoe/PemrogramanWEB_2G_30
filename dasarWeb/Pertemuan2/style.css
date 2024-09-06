@@ -24,7 +24,12 @@ h2{
     color: white;
 } */
 
-body{
+/* body{
     background: url('bunga2.png');
     color: white;
+} */
+
+body{
+    background: url('img/tree1.png'), url('img/field1.jpeg');
+    background-repeat: no-repeat, repeat;
 }
