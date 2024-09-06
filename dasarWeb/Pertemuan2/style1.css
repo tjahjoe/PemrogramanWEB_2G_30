@@ -13,7 +13,7 @@ body{
 .container-satu{
     width: 800px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #c8e4ee;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -39,4 +39,8 @@ h3{
 ul{
     display: inline-block;
     text-align: left;
+}
+
+img{
+    float: left;
 }
