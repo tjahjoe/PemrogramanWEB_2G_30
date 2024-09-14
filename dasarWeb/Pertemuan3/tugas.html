@@ -107,19 +107,26 @@
     </form>
     <script>
         const data = () => {
-            let jenisKelamin = document.querySelectorAll('input[name="jenis"]:checked')
-            let pekerjaan = document.querySelectorAll('input[name="pekerjaan"]:checked')
-            let check = document.getElementById('check').checked
-            if (check) {
-                if (jenisKelamin.length != 1) {
-                    alert('pilih salah satu jenis kelamin')
-                } else {
-                    if (pekerjaan.length != 1) {
-                        alert('pilih salah satu pekerjaan')
+            const jenisKelamin = document.querySelectorAll('input[name="jenis"]:checked')
+            const pekerjaan = document.querySelectorAll('input[name="pekerjaan"]:checked')
+            const nama = document.getElementById('nama').value
+            const alamat = document.getElementById('alamat').value
+            const ttl = document.getElementById('ttl').value
+            const check = document.getElementById('check').checked
+            if (nama != "" || alamat != "" || ttl != "") {
+                if (check) {
+                    if (jenisKelamin.length != 1) {
+                        alert('pilih salah satu jenis kelamin')
+                    } else {
+                        if (pekerjaan.length != 1) {
+                            alert('pilih salah satu pekerjaan')
+                        }
                     }
+                } else {
+                    alert('mohon untuk click check')
                 }
-            } else{
-                alert('mohon untuk click check')
+            } else {
+                alert('isi data diri anda')
             }
         }
     </script>
