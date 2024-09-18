@@ -9,6 +9,13 @@ $hasilBagi = $a / $b;
 $sisaBagi = $a % $b;
 $pangkat = $a ** $b;
 
+$hasilSama = $a == $b;
+$hasilTidakSama = $a != $b;
+$hasilLebihKecil = $a < $b;
+$hasilLebihBesar = $a > $b;
+$hasilLebihKecilSama = $a <= $b;
+$hasilLebihBesarSama = $a >= $b;
+
 echo
 "<style>
 *{
@@ -18,7 +25,8 @@ echo
 span{
     color : blue;
 }
-</style>";
+</style>
+";
 
 echo 
 "
@@ -57,6 +65,42 @@ hasil a % b =
 <p>
 hasil a ** b = 
 <span>{$pangkat}</span>
+</p>
+";
+
+echo
+"
+<br><br>
+";
+
+echo
+"
+<p>
+hasil a == b = 
+    <span>{$hasilSama}</span>
+</p>
+
+<p>hasil a != b = 
+    <span>{$hasilTidakSama}</span>
+</p>
+<p>
+
+hasil a < b = 
+    <span>{$hasilLebihKecil}</span>
+</p>
+
+<p>hasil a > b = 
+    <span>{$hasilLebihBesar}</span>
+</p>
+
+<p>
+hasil a <= b = 
+    <span>{$hasilLebihKecilSama}</span>
+</p>
+
+<p>
+hasil a >= b = 
+<span>{$hasilLebihBesarSama}</span>
 </p>
 "
 ?>
