@@ -16,6 +16,11 @@ $hasilLebihBesar = $a > $b;
 $hasilLebihKecilSama = $a <= $b;
 $hasilLebihBesarSama = $a >= $b;
 
+$hasilAnd = $a && $b;
+$hasilOr = $a || $b;
+$hasilNotA = !$a;
+$hasilNotB = !$b;
+
 echo
 "<style>
 *{
@@ -100,7 +105,32 @@ hasil a <= b =
 
 <p>
 hasil a >= b = 
-<span>{$hasilLebihBesarSama}</span>
+    <span>{$hasilLebihBesarSama}</span>
+</p>
+";
+
+echo
+"
+<br><br>
+";
+
+echo
+"
+<p>
+hasil a && b =
+    <span>{$hasilAnd}</span>
+</p>
+<p>
+hasil a || b =
+    <span>{$hasilOr}</span>
+</p>
+<p>
+hasil !a =
+    <span>{$hasilNotA}</span>
+</p>
+<p>
+hasil !b =
+    <span>{$hasilNotB}</span>
 </p>
 "
 ?>
