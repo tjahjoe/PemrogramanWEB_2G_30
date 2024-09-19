@@ -132,5 +132,47 @@ hasil !a =
 hasil !b =
     <span>{$hasilNotB}</span>
 </p>
-"
+";
 ?>
+<br>
+<br>
+<p>
+    hasil a += b adalah
+    <span><?php
+    $a += $b; 
+    echo $a;
+    ?>
+    </span>
+</p>
+<p>
+    hasil a -= b adalah
+    <span><?php
+    $a -= $b; 
+    echo $a;
+    ?>
+    </span>
+</p>
+<p>
+    hasil a *= b adalah
+    <span><?php
+    $a *= $b;
+    echo $a;
+    ?>
+    </span>
+</p>
+<p>
+    hasil a /= b adalah
+    <span><?php
+    $a /= $b;
+    echo $a;
+    ?>
+    </span>
+</p>
+<p>
+    hasil a %= b adalah
+    <span><?php
+    $a %= $b;
+    echo $a;
+    ?>
+    </span>
+</p>
