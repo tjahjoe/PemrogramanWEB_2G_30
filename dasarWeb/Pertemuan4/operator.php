@@ -176,3 +176,26 @@ hasil !b =
     ?>
     </span>
 </p>
+
+<?php
+$hasilIdentik = $a === $b;
+$hasilTiakIdentik = $a !== $b;
+?>
+<br>
+<br>    
+<p>
+    hasil identik a dengan b adalah
+    <span>
+        <?php
+        echo $hasilIdentik;
+        ?>
+    </span>
+</p>
+<p>
+    hasil tidak identik a dengan b adalah
+    <span>
+        <?php
+        echo $hasilTiakIdentik;
+        ?>
+    </span>
+</p>
