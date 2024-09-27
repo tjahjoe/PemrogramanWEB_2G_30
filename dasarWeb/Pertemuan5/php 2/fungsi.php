@@ -1,19 +1,28 @@
 <?php
-function perkenalan($nama, $salam="Assalamualaikum"){
-    echo $salam. ", ";
-    echo "Perkenalkan, nama saya " . $nama ."<br/>";
-    echo "Senang berkenalan dengan Anda<br/>";
-}
-perkenalan("Wahyu", "Hallo");
-echo "<hr>";
+// function perkenalan($nama, $salam="Assalamualaikum"){
+//     echo $salam. ", ";
+//     echo "Perkenalkan, nama saya " . $nama ."<br/>";
+//     echo "Senang berkenalan dengan Anda<br/>";
+// }
+// perkenalan("Wahyu", "Hallo");
+// echo "<hr>";
 
-$saya = "Wahyu";
-$ucapanSalam = "Selamat pagi";
+// $saya = "Wahyu";
+// $ucapanSalam = "Selamat pagi";
 
-perkenalan($saya);
+// perkenalan($saya);
 ?>
 
-<br><br>
+<!-- <br><br> -->
+
+<?php
+// function hitungUmur($thn_lahir, $thn_sekarang){
+//     $umur = $thn_sekarang - $thn_lahir;
+//     return $umur;
+// }
+
+// echo "Umur saya adalah " . hitungUmur(2004, 2024) . "tahun";
+?>
 
 <?php
 function hitungUmur($thn_lahir, $thn_sekarang){
@@ -21,5 +30,14 @@ function hitungUmur($thn_lahir, $thn_sekarang){
     return $umur;
 }
 
-echo "Umur saya adalah " . hitungUmur(2004, 2024) . "tahun";
-?>
+function perkenalan($nama, $salam="Assalamualaikum"){
+    echo $salam . ", ";
+    echo "Perkenalkan, nama saya " . $nama . "<br/>";
+
+    echo "Saya berusia " . hitungUmur(2004, 2024) . " tahun<br/>";
+    echo "Senang berkenalan dengan anda<br/>";
+}
+
+perkenalan("Wahyu")
+// echo "Umur saya adalah " . hitungUmur(2004, 2024) . "tahun";
+?>   
