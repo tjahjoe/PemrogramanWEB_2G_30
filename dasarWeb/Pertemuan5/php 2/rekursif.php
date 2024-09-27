@@ -63,7 +63,11 @@ $menu = [
 function tampikanMenuBertingkat(array $menu){
     echo "<ul>";
     foreach($menu as $key => $item){
-        echo "<li>{$item['nama']}</li>";
+        echo "<li>{$item['nama']}";
+        if (isset($item['subMenu'])) {
+            tampikanMenuBertingkat($item['subMenu']);
+        };
+        echo "</li>";
     }
     echo "</ul>";
 };
