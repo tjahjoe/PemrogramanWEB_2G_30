@@ -18,6 +18,12 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $input = $_POST['input'];
     $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
-    echo $input;
+    $email = $_POST['email'];
+    echo $input . "<br>";
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo $email . " Aman";
+    } else {
+        echo "email tidak aman";
+    }
 }
 ?>
