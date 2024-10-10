@@ -2,10 +2,11 @@
 <html>
     <head>
         <title>Contoh Form dengan PHP</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
     </head>
     <body>
         <h2>Form Contoh</h2>
-        <form method="post" action="proses_lanjut.php">
+        <form id="myForm" >
             <label for="buah">Pilih Buah:</label>
             <select name="buah" id="buah">
                 <option value="apel">Apel</option>
@@ -31,5 +32,27 @@
 
             <input type="submit" value="Submit">
         </form>
+        <div id="hasil" >
+
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $("#myForm").submit(function(e) {
+                    e.preventDefault()
+
+                    var formData = $("#myForm").serialize()
+
+                    $.ajax({
+                        url: "proses_lanjut.php",
+                        type : "POST",
+                        data :formData,
+                        success :function(response){
+                            $("#hasil").html(response)
+                        }
+                    })
+                })
+            })
+        </script>
     </body>
 </html>
