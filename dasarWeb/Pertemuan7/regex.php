@@ -37,8 +37,8 @@
 ?>
 
 <?php
-$pattern ='/g?/';
-$text = 'god is good';
+$pattern ='/g{1,2}/';
+$text = 'ggg is gggg';
 if (preg_match($pattern, $text, $matches)) {
     echo 'Cocokkan: ' .$matches[0];
 } else {
