@@ -2,7 +2,7 @@
 if (isset(($_FILES['file']['name']))) {
     $totalFiles = count($_FILES['file']['name']);
     $errors = array();
-    $extensions = array("pdf", "doc", "docx", "txt");
+    $extensions = array("jpg", "jpeg", "png", "gif");
     for ($i = 0; $i < $totalFiles; $i++) {
         $file_name = $_FILES['file']['name'][$i];
         $file_size = $_FILES['file']['size'][$i];
@@ -12,7 +12,7 @@ if (isset(($_FILES['file']['name']))) {
         
 
         if (in_array($file_ext, $extensions) === false) {
-            $errors[] = "Ekstensi file yang diizinkan adalah PDF, DOC, DOCX, atau TXT.";
+            $errors[] = "Ekstensi file yang diizinkan adalah JPG, JPEG, PNG, atau GIF.";
         }
 
         if ($file_size > 2097152) {
