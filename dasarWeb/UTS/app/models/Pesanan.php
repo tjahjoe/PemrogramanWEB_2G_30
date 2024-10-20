@@ -20,7 +20,7 @@ class Pesanan{
         $this -> conn -> beginTransaction();
 
         foreach ($menu as $m){
-            if ($pesanan[$m['menu_id']] != "") {
+            if ($pesanan[$m['menu_id']] != '') {
                 $stmt -> bindParam(1, $telepon);
                 $stmt -> bindParam(2, $m['menu_id']);
                 $stmt -> bindValue(3, intval($pesanan[$m['menu_id']]));
@@ -30,6 +30,7 @@ class Pesanan{
         }
 
         $this -> conn ->commit();
+        return true;
     }
 }
 ?>

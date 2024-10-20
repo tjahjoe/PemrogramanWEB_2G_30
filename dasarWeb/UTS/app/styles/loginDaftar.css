@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     user-select: none;
+    font-family: monospace;
 }
 
 body{
@@ -40,7 +41,7 @@ a{
 }
 
 .daftar:hover{
-    background-color: aliceblue;
+    background-color: rgb(246, 255, 149);
     border-radius: 25px;
 }
 
@@ -58,7 +59,7 @@ input[type="submit"]{
     padding: 5px;
     width: 100%;
     background-color: rgb(130, 229, 158);
-    border: 1px rgb(130, 229, 158) solid;
+    border: 1px black solid;
     box-sizing: border-box;
 }
 

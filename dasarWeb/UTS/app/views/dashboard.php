@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Document</title>
+    <title>dashboard</title>
     <link rel="stylesheet" href="../styles/dashboard.css">
 </head>
 
@@ -11,12 +11,12 @@
         <div class="box-nav">
             <?php
             $pilihan = ['MENU', 'RESERVASI', 'LOGIN', 'LOGOUT'];
-            $uri = ['../../public/index.php?action=menu','','','../../public/index.php?action=logout'];
+            $uri = ['../../public/index.php?action=menu', '', '../../public/index.php?action=login', '../../public/index.php?action=logout'];
             for ($i = 0; $i < count($pilihan); $i += 1) {
-                echo 
-                "<a href=\"$uri[$i]\">
+                echo
+                    "<a href=\"$uri[$i]\">
                 <div class=\"frame\">
-                    $pilihan[$i]
+                   <h4>$pilihan[$i]</h4>
                 </div>
                 </a>";
             }
@@ -24,8 +24,45 @@
 
         </div>
     </nav>
-    <header></header>
-    <div></div>
+    <header>
+        <h1 class="elrest">
+            selamat datang di elrest
+        </h1>
+    </header>
+    <div class="container">
+        <div class="container-two">
+            <div class="box-content">
+                <img src="../image/familytime.jpg" alt="">
+                <br>
+                <br>
+                <br>
+                <h3>family time</h3>
+            </div>
+            <div class="box-content">
+                <img src="../image/metime.png" alt="">
+                <br>
+                <br>
+                <br>
+                <h3>me time</h3>
+            </div>
+        </div>
+        <div class="container-two">
+            <div class="box-content">
+                <img src="../image/friendtime.png" alt="">
+                <br>
+                <br>
+                <br>
+                <h3>friend time</h3>
+            </div>
+            <div class="box-content">
+                <img src="../image/escapetime.jpg" alt="">
+                <br>
+                <br>
+                <br>
+                <h3>escape time</h3>
+            </div>
+        </div>
+    </div>
     <footer></footer>
     <script>
 

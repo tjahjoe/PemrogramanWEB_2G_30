@@ -1,6 +1,7 @@
 <?php
 session_start();
-echo session_status() === PHP_SESSION_NONE;
+// echo session_status() === PHP_SESSION_NONE;
+echo isset($_SESSION["pesan"]);
 ?>
 <DOCTYPE html>
 <html>
