@@ -20,7 +20,6 @@ unset($_SESSION['pesan']);
     </div>
     <br>
     <br>
-    <!-- <div class="container"> -->
     <form action="../../public/index.php?action=pesan" method="post">
         <div class="container">
             <div class="txt">
@@ -33,16 +32,21 @@ unset($_SESSION['pesan']);
             </div>
             <table>
                 <tr>
-                    <th>nama</th>
+                    <th>menu</th>
                     <th>harga</th>
                     <th>pesan</th>
                 </tr>
                 <?php
                 if (isset($_SESSION["menu"])) {
+                    ?>
+                    <script>
+                        const a = <?php echo json_encode($_SESSION["menu"]); ?>;
+                    </script>
+                    <?php
                     foreach ($_SESSION["menu"] as $row) {
                         echo "<tr>";
-                        echo "<td>" . $row['nama'] . "</td>";
-                        echo "<td>" . $row['harga'] . "</td>";
+                        echo "<td>" . strtolower($row['nama']) . "</td>";
+                        echo "<td>rp. " . $row['harga'] . "</td>";
                         $menuId = $row['menu_id'];
                         $jumlahPesanan = isset($_SESSION['jumlahPesanan'][$menuId]) ? $_SESSION['jumlahPesanan'][$menuId] : '';
                         echo "<td class=\"td-center\">
@@ -54,13 +58,38 @@ unset($_SESSION['pesan']);
                 ?>
             </table>
             <div class="inp">
-                <input type="submit" value="pesan">
+                <div class="spc" >
+                    <input type="submit" value="pesan">
+                </div>
+                <div class="spc" >
+                    <div class="cek" id="btn">
+                        <p>cek</p>
+                    </div>
+                </div>
+                <div class="spc" >
+                    <h4 id="check">
+                        total :
+                    </h4>
+                </div>
             </div>
-
         </div>
     </form>
-    <!-- </div> -->
     <script>
+        const element = document.getElementById("btn");
+        element.addEventListener("click", myFunction);
+
+        function myFunction() {
+            let jumlah = 0;
+            for (let i = 0; i < a.length; i++) {
+                let menu_id = a[i]['menu_id']
+                let harga = a[i]['harga']
+                let pesanan = document.getElementsByName(`pesanan[${menu_id}]`)[0].value
+                if (pesanan != "" && pesanan != 0) {
+                    jumlah += pesanan * harga
+                }
+            }
+            document.getElementById("check").innerHTML = "total : rp. " + jumlah
+        }
     </script>
 </body>
 

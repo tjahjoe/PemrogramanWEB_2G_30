@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>dashboard</title>
     <link rel="stylesheet" href="../styles/dashboard.css">
@@ -10,7 +9,7 @@
     <nav>
         <div class="box-nav">
             <?php
-            $pilihan = ['MENU', 'RESERVASI', 'LOGIN', 'LOGOUT'];
+            $pilihan = ['menu', 'reservasi', 'login', 'logout'];
             $uri = ['../../public/index.php?action=menu', '', '../../public/index.php?action=login', '../../public/index.php?action=logout'];
             for ($i = 0; $i < count($pilihan); $i += 1) {
                 echo

@@ -95,7 +95,7 @@ class AuthController
             if (isLogin()) {
                 unset($_SESSION['jumlahPesanan']);
                 $pesanan = $this->pesananModel->pesan($pesanan);
-                header('location:../app/views/menu.php');
+                header('location:../app/views/sukses.php');
                 exit();
             } else {
                 header('location:../app/views/login.php');
