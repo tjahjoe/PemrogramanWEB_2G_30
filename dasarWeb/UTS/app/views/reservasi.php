@@ -1,6 +1,7 @@
 <?php
 session_start();
 unset($_SESSION['lantai']);
+date_default_timezone_set('Asia/Jakarta');
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,9 +49,9 @@ unset($_SESSION['lantai']);
         foreach ($_SESSION['tempat'] as $row) {
             echo "<option value=\"" . $row['tempat_id'] . "\"> " . $row['tempat_id'] . "</option>";
         }
+        echo "</select>";
     }
     ?>
-    </select>
     <input type="date" name="hari" id="hari" min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" required>
     <input type="submit" value="pesan">
     </form>
