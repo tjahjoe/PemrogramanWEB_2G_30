@@ -50,10 +50,10 @@ date_default_timezone_set('Asia/Jakarta');
             echo "<option value=\"" . $row['tempat_id'] . "\"> " . $row['tempat_id'] . "</option>";
         }
         echo "</select>";
+        echo "<input type=\"date\" name=\"hari\" id=\"hari\" min=\"" . date('Y-m-d', strtotime('+1 day')) . "\" required>";
+        echo "<input type=\"submit\" value=\"pesan\">";
     }
     ?>
-    <input type="date" name="hari" id="hari" min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" required>
-    <input type="submit" value="pesan">
     </form>
 </body>
 

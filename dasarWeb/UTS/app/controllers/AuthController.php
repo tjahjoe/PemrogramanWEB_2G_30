@@ -34,6 +34,8 @@ class AuthController
                     header('location:../app/views/menu.php');
                     exit();
                 } else if (isset($_SESSION['lantai'])) {
+                    $_SESSION['info'] = $_SESSION['tempInfo'];
+                    $_SESSION['tempat'] = $_SESSION['tempTempat'];
                     header('location:../app/views/reservasi.php');
                     exit();
                 } else {
@@ -125,25 +127,25 @@ class AuthController
 
     public function info($lantai)
     {
-        $ukuran = $this->tempatModel->ukuran($lantai);
+        $info = $this->reservasiModel->info($lantai);
 
+        if ($info) {
+            $_SESSION['tempInfo'] = $info;
+        } else {
+            unset($_SESSION['info']);
+        }
+
+        $ukuran = $this->tempatModel->ukuran($lantai);
         if ($ukuran) {
-            $_SESSION['tempat'] = $ukuran;
+            $_SESSION['tempTempat'] = $ukuran;
             $_SESSION['lantai'] = "";
 
             if (isLogin()) {
-                $info = $this->reservasiModel->info($lantai);
-
-                if ($info) {
-                    $_SESSION['info'] = $info;
-                } else {
-                    unset($_SESSION['info']);
-                }
+                $_SESSION['info'] = $_SESSION['tempInfo'];
+                $_SESSION['tempat'] = $_SESSION['tempTempat'];
                 header('location:../app/views/reservasi.php');
                 exit();
             } else {
-                unset($_SESSION['info']);
-                unset($_SESSION['tempat']);
                 header('location:../app/views/login.php');
                 exit();
             }
