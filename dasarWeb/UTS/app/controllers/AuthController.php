@@ -3,6 +3,7 @@ require_once __DIR__ . '/../models/Person.php';
 require_once __DIR__ . '/../models/Menu.php';
 require_once __DIR__ . '/../models/Pesanan.php';
 require_once __DIR__ . '/../models/Tempat.php';
+require_once __DIR__ . '/../models/Reservasi.php';
 require_once __DIR__ . '/../../session/session.php';
 
 class AuthController
@@ -11,12 +12,14 @@ class AuthController
     private $menuModel;
     private $pesananModel;
     private $tempatModel;
+    private $reservasiModel;
     public function __construct()
     {
         $this->personModel = new Person();
         $this->menuModel = new Menu();
         $this->pesananModel = new Pesanan();
         $this->tempatModel = new Tempat();
+        $this->reservasiModel = new Reservasi();
     }
 
     public function login()
@@ -113,13 +116,16 @@ class AuthController
     {
         $tempat = $this->tempatModel->tempat();
         if ($tempat) {
-            $_SESSION['tempat'] = $tempat;
             header('location:../app/views/tempat.php');
             exit();
         } else {
             header('location:../app/views/dashboard.php');
             exit();
         }
+    }
+
+    public function pesanTempat($lantai){
+        $tempat = $this->reservasiModel->tempat($lantai);
     }
 }
 ?>

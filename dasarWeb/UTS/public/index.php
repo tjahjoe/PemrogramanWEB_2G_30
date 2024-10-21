@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../app/controllers/AuthController.php';
 
 $authController = new AuthController();
-$action = isset($_GET['action']) ? $_GET['action'] : 'login';
+$action = isset($_GET['action']) ? $_GET['action'] : 'dashboard';
 
 if ($action == 'login') {
     $authController->login();
@@ -16,7 +16,15 @@ if ($action == 'login') {
     $authController->pesan();
 } else if ($action == 'reservasi') {
     $authController->tempat();
+} else if ($action == 'pesanTempat') {
+    if (isset($_GET['lantai'])) {
+        $authController->pesanTempat($_GET['lantai']);
+    } else {
+        $authController->tempat();
+    }
 } else if ($action == 'logout') {
     $authController->logout();
+} else {
+    $authController->dashboard();
 }
 ?>
