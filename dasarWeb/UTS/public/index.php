@@ -16,12 +16,14 @@ if ($action == 'login') {
     $authController->pesan();
 } else if ($action == 'reservasi') {
     $authController->tempat();
-} else if ($action == 'pesanTempat') {
+} else if ($action == 'riwayat') {
     if (isset($_GET['lantai'])) {
-        $authController->pesanTempat($_GET['lantai']);
+        $authController->info($_GET['lantai']);
     } else {
         $authController->tempat();
     }
+} else if ($action == 'pesanTempat') {
+    $authController->pesanTempat();
 } else if ($action == 'logout') {
     $authController->logout();
 } else {

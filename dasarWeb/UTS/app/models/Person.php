@@ -16,9 +16,9 @@ class Person{
         $stmt->bindParam(1, $telepon);
         $stmt->bindParam(2, $password);
         $stmt->execute();
-        
-        if( !empty($stmt)){
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($result){
+            return $result;
         } else {
             return false;
         }
@@ -32,8 +32,8 @@ class Person{
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $telepon);
         $stmt->execute();
-    
-        if ($stmt->rowCount() > 0) {
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
             return false; 
         } else {
             $query = "insert into " . $this->table . " (nama, telepon, password) values (?, ?, ?)";

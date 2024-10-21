@@ -13,7 +13,6 @@ class Pesanan{
     public function pesan($pesanan){
         $menu = $_SESSION['menu'];
         $telepon = $_SESSION['user']['telepon'];
-        $dataPesanan = [];
 
         $query = "insert into Pesanan (telepon, menu_id, jumlah, status) values (?, ?, ?, ?)";
         $stmt = $this -> conn -> prepare($query);

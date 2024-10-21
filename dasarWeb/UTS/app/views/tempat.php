@@ -5,7 +5,7 @@ session_start();
 <html>
 
 <head>
-    <title>menu</title>
+    <title>tempat</title>
     <link rel="stylesheet" href="../styles/tempat.css">
 </head>
 
@@ -25,11 +25,11 @@ session_start();
         $gambar = ['lt4.jpg', 'lt3.jpg', 'lt2.jpg', 'lt1.jpg', 'outdoor.jpg'];
         $spesifik = ['iv', 'iii', 'ii', 'i', 'io'];
         $uri = [
-            '../../public/index.php?action=pesanTempat&lantai=4',
-            '../../public/index.php?action=pesanTempat&lantai=3',
-            '../../public/index.php?action=pesanTempat&lantai=2',
-            '../../public/index.php?action=pesanTempat&lantai=1',
-            '../../public/index.php?action=pesanTempat&lantai=11'
+            '../../public/index.php?action=riwayat&lantai=4',
+            '../../public/index.php?action=riwayat&lantai=3',
+            '../../public/index.php?action=riwayat&lantai=2',
+            '../../public/index.php?action=riwayat&lantai=1',
+            '../../public/index.php?action=riwayat&lantai=11'
         ];
         for ($i = 0; $i < count($pilihan); $i += 1) {
             echo

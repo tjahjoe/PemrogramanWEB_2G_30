@@ -9,12 +9,13 @@ class Tempat{
         $this->conn = $database->getConnection();
     }
 
-    public function tempat(){
-        $query = "select lantai from " . $this->table . " group by lantai";
+    public function ukuran($lantai){
+        $query = "select * from " . $this->table . " where lantai = " . $lantai ;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        if(!empty($stmt)){
-            return $stmt->fetchall(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($results) {
+            return $results;
         } else {
             return false;
         }

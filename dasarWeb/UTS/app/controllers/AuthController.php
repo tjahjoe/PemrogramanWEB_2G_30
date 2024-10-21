@@ -94,9 +94,11 @@ class AuthController
     public function pesan()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
             $pesanan = $_POST['pesanan'];
             $_SESSION['jumlahPesanan'] = $pesanan;
             $_SESSION['pesan'] = "";
+
             if (isLogin()) {
                 unset($_SESSION['jumlahPesanan']);
                 $pesanan = $this->pesananModel->pesan($pesanan);
@@ -114,18 +116,52 @@ class AuthController
 
     public function tempat()
     {
-        $tempat = $this->tempatModel->tempat();
-        if ($tempat) {
-            header('location:../app/views/tempat.php');
+        header('location:../app/views/tempat.php');
+        exit();
+    }
+
+    public function info($lantai)
+    {
+        // islogin
+        $riwayat = $this->reservasiModel->info($lantai);
+
+        if ($riwayat) {
+            $_SESSION['info'] = $riwayat;
+        } else {
+            unset($_SESSION['info']);
+        }
+
+        $ukuran = $this->tempatModel->ukuran($lantai);
+        if ($ukuran) {
+            $_SESSION['tempat'] = $ukuran;
+            header('location:../app/views/reservasi.php');
             exit();
         } else {
-            header('location:../app/views/dashboard.php');
+            unset($_SESSION['tempat']);
+            $_SESSION['tempat'] = $ukuran;
+            header('location:../app/views/tempat.php');
             exit();
         }
     }
 
-    public function pesanTempat($lantai){
-        $tempat = $this->reservasiModel->tempat($lantai);
+    public function pesanTempat()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $telepon = $_SESSION['user']['telepon'];
+            $id = $_POST['id'];
+            $hari = $_POST['hari'];
+            $status = $this->reservasiModel->pesanTempat($telepon, $id, $hari);
+            if ($status) {
+                header('location:../app/views/sukses.php');
+                exit();
+            } else {
+                header('location:../app/views/reservasi.php');
+                exit();
+            }
+        } else {
+            header('location:../app/views/reservasi.php');
+            exit();
+        }
     }
 }
 ?>
