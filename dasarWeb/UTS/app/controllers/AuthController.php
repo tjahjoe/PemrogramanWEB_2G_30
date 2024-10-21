@@ -33,6 +33,9 @@ class AuthController
                 if (isset($_SESSION['pesan'])) {
                     header('location:../app/views/menu.php');
                     exit();
+                } else if (isset($_SESSION['lantai'])) {
+                    header('location:../app/views/reservasi.php');
+                    exit();
                 } else {
                     header('location:../app/views/dashboard.php');
                     exit();
@@ -122,11 +125,10 @@ class AuthController
 
     public function info($lantai)
     {
-        // islogin
-        $riwayat = $this->reservasiModel->info($lantai);
+        $info = $this->reservasiModel->info($lantai);
 
-        if ($riwayat) {
-            $_SESSION['info'] = $riwayat;
+        if ($info) {
+            $_SESSION['info'] = $info;
         } else {
             unset($_SESSION['info']);
         }
@@ -134,24 +136,45 @@ class AuthController
         $ukuran = $this->tempatModel->ukuran($lantai);
         if ($ukuran) {
             $_SESSION['tempat'] = $ukuran;
-            header('location:../app/views/reservasi.php');
-            exit();
+            $_SESSION['lantai'] = "";
+
+            if (isLogin()) {
+                header('location:../app/views/reservasi.php');
+                exit();
+            } else {
+                header('location:../app/views/login.php');
+                exit();
+            }
         } else {
             unset($_SESSION['tempat']);
             $_SESSION['tempat'] = $ukuran;
             header('location:../app/views/tempat.php');
             exit();
         }
+
     }
 
-    public function pesanTempat()
+    public function reservasi()
+    {
+        header('location:../app/views/reservasi.php');
+        exit();
+    }
+
+    public function pesanTempat($lantai)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $telepon = $_SESSION['user']['telepon'];
-            $id = $_POST['id'];
+            $tempat_id = $_POST['tempat_id'];
             $hari = $_POST['hari'];
-            $status = $this->reservasiModel->pesanTempat($telepon, $id, $hari);
+            $status = $this->reservasiModel->pesanTempat($telepon, $tempat_id, $hari);
             if ($status) {
+                $info = $this->reservasiModel->info($lantai);
+
+                if ($info) {
+                    $_SESSION['info'] = $info;
+                } else {
+                    unset($_SESSION['info']);
+                }
                 header('location:../app/views/sukses.php');
                 exit();
             } else {

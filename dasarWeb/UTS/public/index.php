@@ -23,7 +23,11 @@ if ($action == 'login') {
         $authController->tempat();
     }
 } else if ($action == 'pesanTempat') {
-    $authController->pesanTempat();
+    if (isset($_GET['lantai'])) {
+        $authController->pesanTempat($_GET['lantai']);
+    } else {
+        $authController->reservasi();
+    }
 } else if ($action == 'logout') {
     $authController->logout();
 } else {

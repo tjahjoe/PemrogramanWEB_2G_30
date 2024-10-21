@@ -31,25 +31,26 @@ class Reservasi
         }
     }
 
-    public function pesanTempat($telepon, $id, $hari)
+    public function pesanTempat($telepon, $tempat_id, $hari)
     {
-        // mengecek apakah id ada
-        if (empty($telepon) || empty($id) || empty($hari)) {
+        if (empty($telepon) || empty($tempat_id) || empty($hari)) {
             return false;
         }
-        $query = "select * from " . $this->table . " where id = ? and hari = ?";
+
+        $query = "select * from " . $this->table . " where tempat_id = ? and hari = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $id);
+        $stmt->bindParam(1, $tempat_id);
         $stmt->bindParam(2, $hari);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
         if ($result) {
             return false;
         } else {
             $query = "insert into " . $this->table . " (telepon, tempat_id, hari, status) values (?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(1, $telepon);
-            $stmt->bindParam(2, $id);
+            $stmt->bindParam(2, $tempat_id);
             $stmt->bindParam(3, $hari);
             $stmt -> bindValue(4, 'aktif');
             if ($stmt->execute()) {

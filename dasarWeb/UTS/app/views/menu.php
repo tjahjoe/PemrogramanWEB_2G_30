@@ -1,6 +1,7 @@
 <?php
 session_start();
 unset($_SESSION['pesan']);
+unset($_SESSION['lantai']);
 ?>
 <!DOCTYPE html>
 <html>
