@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../models/Person.php';
 require_once __DIR__ . '/../models/Menu.php';
 require_once __DIR__ . '/../models/Pesanan.php';
+require_once __DIR__ . '/../models/Tempat.php';
 require_once __DIR__ . '/../../session/session.php';
 
 class AuthController
@@ -9,11 +10,13 @@ class AuthController
     private $personModel;
     private $menuModel;
     private $pesananModel;
+    private $tempatModel;
     public function __construct()
     {
         $this->personModel = new Person();
         $this->menuModel = new Menu();
         $this->pesananModel = new Pesanan();
+        $this->tempatModel = new Tempat();
     }
 
     public function login()
@@ -24,7 +27,7 @@ class AuthController
             $user = $this->personModel->login($telepon, $password);
             if ($user) {
                 $_SESSION['user'] = $user;
-                if (isset( $_SESSION['pesan'])) {
+                if (isset($_SESSION['pesan'])) {
                     header('location:../app/views/menu.php');
                     exit();
                 } else {
@@ -74,7 +77,6 @@ class AuthController
 
     public function menu()
     {
-        // $_SESSION['status'] = "";
         $menu = $this->menuModel->menu();
         if ($menu) {
             $_SESSION['menu'] = $menu;
@@ -103,6 +105,19 @@ class AuthController
             }
         } else {
             header('location:../app/views/menu.php');
+            exit();
+        }
+    }
+
+    public function tempat()
+    {
+        $tempat = $this->tempatModel->tempat();
+        if ($tempat) {
+            $_SESSION['tempat'] = $tempat;
+            header('location:../app/views/tempat.php');
+            exit();
+        } else {
+            header('location:../app/views/dashboard.php');
             exit();
         }
     }

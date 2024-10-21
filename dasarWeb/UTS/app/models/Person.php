@@ -25,7 +25,7 @@ class Person{
     }
 
     public function daftar($nama, $telepon, $password) {
-        if (empty($nama) || empty($telepon) || empty($password)) {
+        if (empty($nama) || empty($telepon) || empty($password) || !is_numeric($telepon)) {
             return false; 
         }
         $query = "select * from " . $this->table . " where telepon = ?";

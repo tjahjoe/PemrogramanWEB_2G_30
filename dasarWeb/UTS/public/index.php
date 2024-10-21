@@ -14,6 +14,8 @@ if ($action == 'login') {
     $authController->menu();
 } else if ($action == 'pesan'){
     $authController->pesan();
+} else if ($action == 'reservasi') {
+    $authController->tempat();
 } else if ($action == 'logout') {
     $authController->logout();
 }

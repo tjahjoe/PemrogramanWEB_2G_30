@@ -10,7 +10,7 @@
         <div class="box-nav">
             <?php
             $pilihan = ['menu', 'reservasi', 'login', 'logout'];
-            $uri = ['../../public/index.php?action=menu', '', '../../public/index.php?action=login', '../../public/index.php?action=logout'];
+            $uri = ['../../public/index.php?action=menu', '../../public/index.php?action=reservasi', '../../public/index.php?action=login', '../../public/index.php?action=logout'];
             for ($i = 0; $i < count($pilihan); $i += 1) {
                 echo
                     "<a href=\"$uri[$i]\">

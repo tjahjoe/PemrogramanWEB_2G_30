@@ -31,11 +31,15 @@ unset($_SESSION['pesan']);
                 </h2>
             </div>
             <table>
-                <tr>
+                <!-- <thead> -->
+                    <tr>
                     <th>menu</th>
                     <th>harga</th>
                     <th>pesan</th>
                 </tr>
+                <!-- </thead>
+                <tbody> -->
+                
                 <?php
                 if (isset($_SESSION["menu"])) {
                     ?>
@@ -45,8 +49,8 @@ unset($_SESSION['pesan']);
                     <?php
                     foreach ($_SESSION["menu"] as $row) {
                         echo "<tr>";
-                        echo "<td>" . strtolower($row['nama']) . "</td>";
-                        echo "<td>rp. " . $row['harga'] . "</td>";
+                        echo "<td>" . htmlspecialchars(strtolower($row['nama']))  . "</td>";
+                        echo "<td>rp. " . htmlspecialchars($row['harga'])  . "</td>";
                         $menuId = $row['menu_id'];
                         $jumlahPesanan = isset($_SESSION['jumlahPesanan'][$menuId]) ? $_SESSION['jumlahPesanan'][$menuId] : '';
                         echo "<td class=\"td-center\">
@@ -56,6 +60,7 @@ unset($_SESSION['pesan']);
                     }
                 }
                 ?>
+                <!-- </tbody> -->
             </table>
             <div class="inp">
                 <div class="spc" >
@@ -88,7 +93,7 @@ unset($_SESSION['pesan']);
                     jumlah += pesanan * harga
                 }
             }
-            document.getElementById("check").innerHTML = "total : rp. " + jumlah
+            document.getElementById("check").innerHTML = "total : rp. " + jumlah + ".00"
         }
     </script>
 </body>
