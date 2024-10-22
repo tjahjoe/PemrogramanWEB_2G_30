@@ -34,13 +34,14 @@ date_default_timezone_set('Asia/Jakarta');
                         <th>lantai</th>
                         <th>ukuran</th>
                         <th>harga</th>
-                        <th>hari</th>
+                        <th>tanggal</th>
                     </tr>
                     <?php
                     foreach ($_SESSION["riwayatReservasi"] as $row) {
+                        $lantai = htmlspecialchars($row['lantai']) == 11 ? '1 outdor' : htmlspecialchars($row['lantai']);
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars(strtolower($row['tempat_id'])) . "</td>";
-                        echo "<td>" . htmlspecialchars(strtolower($row['lantai'])) . "</td>";
+                        echo "<td>" . htmlspecialchars(strtolower($lantai)) . "</td>";
                         echo "<td>" . htmlspecialchars(strtolower($row['ukuran'])) . " orang</td>";
                         echo "<td>rp. " . htmlspecialchars(strtolower($row['harga'])) . "/hari</td>";
                         echo "<td>" . htmlspecialchars(strtolower($row['hari'])) . "</td>";
@@ -67,6 +68,7 @@ date_default_timezone_set('Asia/Jakarta');
                             <th>nama</th>
                             <th>jumlah</th>
                             <th>harga</th>
+                            <th>status</th>
                         </tr>
                         <?php
                         foreach ($_SESSION["riwayatPesanan"] as $row) {
@@ -75,6 +77,8 @@ date_default_timezone_set('Asia/Jakarta');
                             echo "<td class=\"td-clr\">" . htmlspecialchars(strtolower($row['nama'])) . "</td>";
                             echo "<td class=\"td-clr\">" . htmlspecialchars(strtolower($row['jumlah'])) . "</td>";
                             echo "<td class=\"td-clr\">rp. " . htmlspecialchars(strtolower($row['harga'])) . "/porsi</td>";
+                            $isAktif = $row['status'] == 'aktif' ? "<td class=\"td-clr\">" . htmlspecialchars(strtolower($row['status'])) . "</td>" : "<td>" . htmlspecialchars(strtolower($row['status'])) . "</td>";
+                            echo $isAktif;
                             echo "<tr>";
                         } ?>
                     </table>

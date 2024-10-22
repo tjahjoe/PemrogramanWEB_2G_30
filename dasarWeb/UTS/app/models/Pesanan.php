@@ -37,7 +37,7 @@ class Pesanan{
     }
 
     public function riwayatPesanan($telepon){
-        $query = "select p.menu_id, m.nama, p.jumlah, m.harga from " .$this->table . " p join Menu m on m.menu_id = p.menu_id where p.telepon = ?
+        $query = "select p.menu_id, m.nama, p.jumlah, m.harga, p.status from " .$this->table . " p join Menu m on m.menu_id = p.menu_id where p.telepon = ?
         order by m.nama";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $telepon);

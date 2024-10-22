@@ -19,8 +19,8 @@ unset($_SESSION['menu']);
     <nav>
         <div class="box-nav">
             <?php
-            $pilihan = ['menu', 'reservasi', 'login', 'logout'];
-            $uri = ['../../public/index.php?action=menu', '../../public/index.php?action=reservasi', '../../public/index.php?action=login', '../../public/index.php?action=logout'];
+            $pilihan = ['menu', 'reservasi', 'riwayat', 'login'];
+            $uri = ['../../public/index.php?action=menu', '../../public/index.php?action=reservasi', '../../public/index.php?action=riwayat', '../../public/index.php?action=login'];
             for ($i = 0; $i < count($pilihan); $i += 1) {
                 echo
                     "<a href=\"$uri[$i]\">
@@ -81,9 +81,9 @@ unset($_SESSION['menu']);
     <br>
     <br>
     <div class="spc">
-        <a href="../../public/index.php?action=riwayat">
+        <a href="../../public/index.php?action=logout">
             <div class="btn">
-                <h3>riwayat</h3>
+                <h3>logout</h3>
             </div>
         </a>
     </div>
