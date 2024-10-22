@@ -16,7 +16,7 @@ class Reservasi
         date_default_timezone_set('Asia/Jakarta');
         $query = "select r.tempat_id, convert(varchar, r.hari , 103) as hari, t.ukuran from " . $this->table . " r 
         join Tempat t on t.tempat_id = r.tempat_id 
-        where lantai = :lantai and r.hari > :currentDate order by hari, tempat_id";
+        where lantai = :lantai and r.hari > :currentDate order by r.hari, r.tempat_id";
 
         $stmt = $this->conn->prepare($query);
 
