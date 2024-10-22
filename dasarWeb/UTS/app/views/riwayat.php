@@ -77,7 +77,8 @@ date_default_timezone_set('Asia/Jakarta');
                             echo "<td class=\"td-clr\">" . htmlspecialchars(strtolower($row['nama'])) . "</td>";
                             echo "<td class=\"td-clr\">" . htmlspecialchars(strtolower($row['jumlah'])) . "</td>";
                             echo "<td class=\"td-clr\">rp. " . htmlspecialchars(strtolower($row['harga'])) . "/porsi</td>";
-                            $isAktif = $row['status'] == 'aktif' ? "<td class=\"td-clr\">" . htmlspecialchars(strtolower($row['status'])) . "</td>" : "<td>" . htmlspecialchars(strtolower($row['status'])) . "</td>";
+                            $isAktif = $row['status'] == 'aktif' ? "<td class=\"td-clr\">" . htmlspecialchars(strtolower($row['status'])) . "</td>" : 
+                                "<td>" . htmlspecialchars(strtolower($row['status'])) . "</td>";
                             echo $isAktif;
                             echo "<tr>";
                         } ?>
