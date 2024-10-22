@@ -35,6 +35,12 @@ unset($_SESSION['menu']);
     </nav>
     <header>
         <h1 class="elrest">
+            <?php
+            if (isset($_SESSION["user"])) {
+                echo "halo " . htmlspecialchars(strtolower($_SESSION["user"]["nama"]));
+                echo "<br>";
+            }
+            ?>
             selamat datang di elrest
         </h1>
     </header>
