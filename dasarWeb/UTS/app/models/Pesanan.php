@@ -11,10 +11,7 @@ class Pesanan{
     }
 
     public function pesan($pesanan, $menu, $telepon){
-        // $menu = $_SESSION['menu']; 
-        // $telepon = $_SESSION['user']['telepon'];
-
-        $query = "insert into Pesanan (telepon, menu_id, jumlah, status) values (?, ?, ?, ?)";
+        $query = "insert into ". $this->table ." (telepon, menu_id, jumlah, status) values (?, ?, ?, ?)";
         $stmt = $this -> conn -> prepare($query);
         $this -> conn -> beginTransaction();
         $jumlahKosong = 0;
@@ -37,6 +34,20 @@ class Pesanan{
 
         $this -> conn ->commit();
         return true;
+    }
+
+    public function riwayatPesanan($telepon){
+        $query = "select p.menu_id, m.nama, p.jumlah, m.harga from " .$this->table . " p join Menu m on m.menu_id = p.menu_id where p.telepon = ?
+        order by m.nama";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $telepon);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);//tes
+        if($results){
+            return $results;
+        } else {
+            return false;
+        }
     }
 }
 ?>

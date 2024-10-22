@@ -32,14 +32,11 @@ unset($_SESSION['lantai']);
                 </h2>
             </div>
             <table>
-                <!-- <thead> -->
                     <tr>
                     <th>menu</th>
                     <th>harga</th>
                     <th>pesan</th>
                 </tr>
-                <!-- </thead>
-                <tbody> -->
                 
                 <?php
                 if (isset($_SESSION["menu"])) {
@@ -61,7 +58,6 @@ unset($_SESSION['lantai']);
                     }
                 }
                 ?>
-                <!-- </tbody> -->
             </table>
             <div class="inp">
                 <div class="spc" >

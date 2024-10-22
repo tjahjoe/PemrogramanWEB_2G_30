@@ -1,3 +1,13 @@
+<?php
+session_start();
+unset($_SESSION['pesan']);
+unset($_SESSION['lantai']);
+unset($_SESSION['riwayatPesanan'] );
+unset($_SESSION['riwayatReservasi'] );
+unset($_SESSION['info'] );
+unset($_SESSION['tempat']);
+unset($_SESSION['menu']);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,10 +72,15 @@
             </div>
         </div>
     </div>
-    <footer></footer>
-    <script>
-
-    </script>
+    <br>
+    <br>
+    <div class="spc">
+        <a href="../../public/index.php?action=riwayat">
+            <div class="btn">
+                <h3>riwayat</h3>
+            </div>
+        </a>
+    </div>
 </body>
 
 </html>

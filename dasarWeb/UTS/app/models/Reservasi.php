@@ -9,19 +9,19 @@ class Reservasi
     {
         $database = new Database();
         $this->conn = $database->getConnection();
+        date_default_timezone_set('Asia/Jakarta');
     }
 
     public function info($lantai)
     {
-        date_default_timezone_set('Asia/Jakarta');
         $query = "select r.tempat_id, convert(varchar, r.hari , 103) as hari, t.ukuran from " . $this->table . " r 
         join Tempat t on t.tempat_id = r.tempat_id 
-        where lantai = :lantai and r.hari > :currentDate order by r.hari, r.tempat_id";
+        where lantai = ? and r.hari > ? order by r.hari, r.tempat_id";
 
         $stmt = $this->conn->prepare($query);
 
-        $stmt->bindParam(':lantai', $lantai, PDO::PARAM_INT);
-        $stmt->bindValue(':currentDate', date("Y-m-d"), PDO::PARAM_STR);
+        $stmt->bindParam(1, $lantai, PDO::PARAM_INT);
+        $stmt->bindValue(2, date("Y-m-d"), PDO::PARAM_STR);
 
         $stmt->execute();
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -53,12 +53,29 @@ class Reservasi
             $stmt->bindParam(1, $telepon);
             $stmt->bindParam(2, $tempat_id);
             $stmt->bindParam(3, $hari);
-            $stmt -> bindValue(4, 'aktif');
+            $stmt->bindValue(4, 'aktif');
             if ($stmt->execute()) {
                 return true;
             } else {
                 return false;
             }
+        }
+    }
+
+    public function riwayatReservasi($telepon)
+    {
+        $query = "select r.tempat_id, t.tempat_id, t.lantai, t.ukuran, t.harga, convert(varchar, r.hari , 103) as 
+        hari from " . $this->table . " r join Tempat t on t.tempat_id = r.tempat_id where r.telepon = ? and r.hari >= ?
+        order by r.hari, r.tempat_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(1, $telepon);
+        $stmt->bindValue(2, date("Y-m-d"));
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);//fetch all
+        if ($results) {
+            return $results;
+        } else {
+            return false;
         }
     }
 }

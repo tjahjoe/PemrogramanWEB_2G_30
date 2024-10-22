@@ -16,7 +16,7 @@ if ($action == 'login') {
     $authController->pesan();
 } else if ($action == 'reservasi') {
     $authController->tempat();
-} else if ($action == 'riwayat') {
+} else if ($action == 'info') {
     if (isset($_GET['lantai'])) {
         $authController->info($_GET['lantai']);
     } else {
@@ -28,6 +28,8 @@ if ($action == 'login') {
     } else {
         $authController->reservasi();
     }
+} else if ($action == 'riwayat') {
+    $authController->riwayat();
 } else if ($action == 'logout') {
     $authController->logout();
 } else {

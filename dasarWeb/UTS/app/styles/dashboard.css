@@ -88,3 +88,26 @@ img{
     height: auto;
     border-radius:10px ;
 }
+
+.spc{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.btn{
+    padding: 5px;
+   border-radius: 10px;
+   border: 1px black solid;
+}
+
+.btn:hover{
+    background-color: rgb(254, 199, 233);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

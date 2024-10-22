@@ -205,5 +205,29 @@ class AuthController
             exit();
         }
     }
+
+    public function riwayat()
+    {
+        if (isLogin()) {
+            $telepon = $_SESSION['user']['telepon'];
+            $riwayatPesanan = $this->pesananModel->riwayatPesanan($telepon);
+            if ($riwayatPesanan) {
+                $_SESSION['riwayatPesanan'] = $riwayatPesanan;
+            } else {
+                unset($_SESSION['riwayatPesanan']);
+            }
+            $riwayatReservasi = $this->reservasiModel->riwayatReservasi($telepon);
+            if ($riwayatReservasi) {
+                $_SESSION['riwayatReservasi'] = $riwayatReservasi;
+            } else {
+                unset($_SESSION['riwayatReservasi']);
+            }
+            header('location:../app/views/riwayat.php');
+            exit();
+        } else {
+            header('location:../app/views/login.php');
+            exit();
+        }
+    }
 }
 ?>
