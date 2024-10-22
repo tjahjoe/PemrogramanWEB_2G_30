@@ -58,7 +58,7 @@ date_default_timezone_set('Asia/Jakarta');
             ?>
             <div class="tempat">
                 <br>
-                <h3>manu</h3>
+                <h3>pesanan</h3>
                 <br>
                 <div class="spc">
                     <table>
