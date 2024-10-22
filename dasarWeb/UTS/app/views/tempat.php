@@ -33,17 +33,16 @@ unset($_SESSION['pesan']);
             '../../public/index.php?action=riwayat&lantai=11'
         ];
         for ($i = 0; $i < count($pilihan); $i += 1) {
-            echo
-                "<div class=\"spc\">
-                    <a href=\"$uri[$i]\">
-                        <div class=\"box $spesifik[$i]\">
-                            <img src=\"../image/$gambar[$i]\" alt=\"\">
-                            <h4>$pilihan[$i]</h4>
-                        </div>
-                    </a>
-                </div>
-                <br>
-                <br>";
+            echo "<div class=\"spc\">";
+            echo "<a href=\"$uri[$i]\">";
+            echo "<div class=\"box $spesifik[$i]\">";
+            echo "<img src=\"../images/$gambar[$i]\" alt=\"\">";
+            echo "<h4>$pilihan[$i]</h4>";
+            echo "</div>";
+            echo "</a>";
+            echo "</div>";
+            echo "<br>";
+            echo "<br>";
         }
         ?>
     </div>

@@ -36,6 +36,8 @@ class AuthController
                 } else if (isset($_SESSION['lantai'])) {
                     $_SESSION['info'] = $_SESSION['tempInfo'];
                     $_SESSION['tempat'] = $_SESSION['tempTempat'];
+                    unset($_SESSION['tempInfo']);
+                    unset($_SESSION['tempTempat']);
                     header('location:../app/views/reservasi.php');
                     exit();
                 } else {
@@ -106,9 +108,19 @@ class AuthController
 
             if (isLogin()) {
                 unset($_SESSION['jumlahPesanan']);
-                $pesanan = $this->pesananModel->pesan($pesanan);
-                header('location:../app/views/sukses.php');
-                exit();
+
+                $menu = $_SESSION['menu'];
+                $telepon = $_SESSION['user']['telepon'];
+
+                $pesanan = $this->pesananModel->pesan($pesanan, $menu, $telepon);
+                if ($pesanan) {
+                    unset($_SESSION['jumlahPesanan']);
+                    header('location:../app/views/sukses.php');
+                    exit();
+                } else {
+                    header('location:../app/views/menu.php');
+                    exit();
+                }
             } else {
                 header('location:../app/views/login.php');
                 exit();

@@ -74,7 +74,7 @@ unset($_SESSION['lantai']);
                 </div>
                 <div class="spc" >
                     <h4 id="check">
-                        total :
+                        total : rp. 0.00
                     </h4>
                 </div>
             </div>

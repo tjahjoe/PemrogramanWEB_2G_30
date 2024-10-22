@@ -8,7 +8,7 @@
 
     <body>
         <div class="box">
-            <img src="../image/sukses.jpg" alt="">
+            <img src="../images/sukses.jpg" alt="">
             <br>
             <h1>
                 sukses

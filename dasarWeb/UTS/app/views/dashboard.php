@@ -31,14 +31,14 @@
     <div class="container">
         <div class="container-two">
             <div class="box-content">
-                <img src="../image/familytime.jpg" alt="">
+                <img src="../images/familytime.jpg" alt="">
                 <br>
                 <br>
                 <br>
                 <h3>family time</h3>
             </div>
             <div class="box-content">
-                <img src="../image/metime.png" alt="">
+                <img src="../images/metime.png" alt="">
                 <br>
                 <br>
                 <br>
@@ -47,14 +47,14 @@
         </div>
         <div class="container-two">
             <div class="box-content">
-                <img src="../image/friendtime.png" alt="">
+                <img src="../images/friendtime.png" alt="">
                 <br>
                 <br>
                 <br>
                 <h3>friend time</h3>
             </div>
             <div class="box-content">
-                <img src="../image/escapetime.jpg" alt="">
+                <img src="../images/escapetime.jpg" alt="">
                 <br>
                 <br>
                 <br>

@@ -87,12 +87,7 @@ table {
 table,
 th,
 td {
-    border-collapse: collapse;
     padding: 10px;
-}
-
-.th{
-
 }
 
 .td-center {
