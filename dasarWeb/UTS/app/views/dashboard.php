@@ -2,14 +2,15 @@
 session_start();
 unset($_SESSION['pesan']);
 unset($_SESSION['lantai']);
-unset($_SESSION['riwayatPesanan'] );
-unset($_SESSION['riwayatReservasi'] );
-unset($_SESSION['info'] );
+unset($_SESSION['riwayatPesanan']);
+unset($_SESSION['riwayatReservasi']);
+unset($_SESSION['info']);
 unset($_SESSION['tempat']);
 unset($_SESSION['menu']);
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>dashboard</title>
     <link rel="stylesheet" href="../styles/dashboard.css">
@@ -20,7 +21,12 @@ unset($_SESSION['menu']);
         <div class="box-nav">
             <?php
             $pilihan = ['menu', 'reservasi', 'riwayat', 'masuk'];
-            $uri = ['../../public/index.php?action=menu', '../../public/index.php?action=reservasi', '../../public/index.php?action=riwayat', '../../public/index.php?action=login'];
+            $uri = [
+                '../../public/index.php?action=menu',
+                '../../public/index.php?action=reservasi',
+                '../../public/index.php?action=riwayat',
+                '../../public/index.php?action=login'
+            ];
             for ($i = 0; $i < count($pilihan); $i += 1) {
                 echo
                     "<a href=\"$uri[$i]\">
