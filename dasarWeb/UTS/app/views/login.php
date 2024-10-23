@@ -2,13 +2,13 @@
 <html>
 
 <head>
-    <title>login</title>
+    <title>masuk</title>
     <link rel="stylesheet" href="../styles/loginDaftar.css">
 </head>
 
 <body>
     <div class="container">
-        <h2>login</h2>
+        <h2>masuk</h2>
         <form class="form-login" action="../../public/index.php?action=login" method="post">
             <label for="telepon">telepon : </label>
             <br>

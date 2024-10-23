@@ -30,7 +30,6 @@ unset($_SESSION['menu']);
                 </a>";
             }
             ?>
-
         </div>
     </nav>
     <header>

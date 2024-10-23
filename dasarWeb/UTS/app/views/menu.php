@@ -64,11 +64,6 @@ unset($_SESSION['lantai']);
                     <input type="submit" value="pesan">
                 </div>
                 <div class="spc" >
-                    <div class="cek" id="btn">
-                        <p>cek</p>
-                    </div>
-                </div>
-                <div class="spc" >
                     <h4 id="check">
                         total : rp. 0.00
                     </h4>
@@ -77,8 +72,11 @@ unset($_SESSION['lantai']);
         </div>
     </form>
     <script>
-        const element = document.getElementById("btn");
-        element.addEventListener("click", myFunction);
+        const element = document.querySelectorAll('input[type="number"]')
+        for (let i = 0; i < element.length; i++) {
+            element[i].addEventListener("change", myFunction)
+            
+        }
 
         function myFunction() {
             let jumlah = 0;
