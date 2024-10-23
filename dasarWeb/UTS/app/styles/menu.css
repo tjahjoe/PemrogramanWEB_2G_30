@@ -96,7 +96,7 @@ td {
     align-items: center;
 }
 
-input[type="submit"]{
+input[type="submit"], .cek{
     border-radius: 25px;
     padding: 5px;
     margin-top: 15px;
@@ -108,6 +108,9 @@ input[type="submit"]{
 
 input[type="submit"]{
     background-color: rgb(130, 229, 158);   
+}
+.cek:hover{
+    background-color: rgb(246, 255, 149);
 }
 
 input[type="number"] {
