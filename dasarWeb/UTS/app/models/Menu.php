@@ -14,9 +14,9 @@ class Menu{
         $query = "select * from ". $this->table;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        
-        if(!empty($stmt)){
-            return $stmt->fetchall(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchall(PDO::FETCH_ASSOC);
+        if($results){
+            return $results;
         } else {
             return false;
         }
