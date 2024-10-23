@@ -8,7 +8,7 @@ date_default_timezone_set('Asia/Jakarta');
 
 <head>
     <title>riwayat</title>
-    <link rel="stylesheet" href="../styles/reservasi.css">
+    <link rel="stylesheet" href="../styles/reservasiRiwayat.css">
 </head>
 
 <body>
