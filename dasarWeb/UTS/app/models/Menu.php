@@ -11,7 +11,7 @@ class Menu{
     }
 
     public function menu(){
-        $query = "select * from ". $this->table;
+        $query = "select * from ". $this->table . " order by nama";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $results = $stmt->fetchall(PDO::FETCH_ASSOC);
