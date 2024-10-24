@@ -14,9 +14,9 @@ date_default_timezone_set('Asia/Jakarta');
 <body>
     <div class="container-dash">
         <a href="../../public/index.php?action=dashboard">
-            <div class="frame">
+            <button class="frame">
                 <h3>dashboard</h3>
-            </div>
+            </button>
         </a>
     </div>
     <br>

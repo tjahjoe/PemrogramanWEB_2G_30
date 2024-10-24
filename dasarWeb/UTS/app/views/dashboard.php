@@ -30,9 +30,9 @@ unset($_SESSION['menu']);
             for ($i = 0; $i < count($pilihan); $i += 1) {
                 echo
                     "<a href=\"$uri[$i]\">
-                <div class=\"frame\">
+                <button class=\"frame\">
                    <h4>$pilihan[$i]</h4>
-                </div>
+                </button>
                 </a>";
             }
             ?>

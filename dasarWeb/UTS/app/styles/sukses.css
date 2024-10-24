@@ -37,13 +37,13 @@ h1{
     align-items: center;
 }
 
-.btn{
+.frame{
     padding: 5px;
    border-radius: 10px;
    border: 1px black solid;
 }
 
-.btn:hover{
+.frame:hover{
     background-color: rgb(254, 199, 233);
 }
 

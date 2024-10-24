@@ -26,9 +26,9 @@
 
         <br>
         <a href="../../public/index.php?action=daftar">
-            <div class="daftar">
+            <button class="daftar">
                 <h3>daftar</h3>
-            </div>
+            </button>
         </a>
     </div>
 </body>

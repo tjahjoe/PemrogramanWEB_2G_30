@@ -16,9 +16,9 @@
             <br>
             <div class="spc" >
                 <a href="../../public/index.php?action=dashboard">
-                    <div class="btn">
+                    <button class="frame">
                         <h3>selesai</h3>
-                    </div>
+                    </button>
                 </a>
             </div>
         </div>
