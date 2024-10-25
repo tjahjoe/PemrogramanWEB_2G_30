@@ -87,9 +87,9 @@ unset($_SESSION['menu']);
     <br>
     <div class="spc">
         <a href="../../public/index.php?action=logout">
-            <div class="btn">
+            <button class="btn">
                 <h3>keluar</h3>
-            </div>
+            </button>
         </a>
     </div>
 </body>
